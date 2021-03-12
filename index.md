@@ -17,16 +17,24 @@ header:
       url: "https://github.com/lebrat/MongeNet"
     - label: "Talk"
       url: "https://github.com/lebrat/MongeNet"
-authors:
-  - image_path: assets/images/bio-leo.jpg
-    title: "Leo Lebrat"
-    excerpt: ""
-  - image_path: assets/images/bio-rodrigo.jpg
-    title: "Rodrigo Santa Cruz"
-  - image_path: assets/images/bio-clinton.jpg    
-    title: "Clinton Fookes"
-  - image_path: assets/images/bio-olivier.jpg
-    title: "Olivier Salvado"
+gallery_voronoi:
+  - url: /assets/images/voronoi_monge.gif
+    image_path: /assets/images/voronoi_monge.gif
+    alt: "MongeNet mesh discretization by a point cloud"
+    title: "MongeNet mesh discretization by a point cloud"
+  - url: /assets/images/voronoi_unif.gif
+    image_path: /assets/images/voronoi_unif.gif
+    alt: "Standard random uniform mesh discretization by a point cloud"
+    title: "Standard random uniform mesh discretization by a point cloud" 
+gallery_airplane:
+  - url: /assets/images/avion_mongenet.png
+    image_path: /assets/images/avion_mongenet.png
+    alt: "MongeNet mesh discretization by a point cloud"
+    title: "MongeNet mesh discretization by a point cloud"
+  - url: /assets/images/avion_uniform.png
+    image_path: /assets/images/avion_uniform.png
+    alt: "Standard random uniform mesh discretization by a point cloud"
+    title: "Standard random uniform mesh discretization by a point cloud" 
 ---
 
 
@@ -37,7 +45,22 @@ Recent advances in geometric deep-learning introduce complex computational chall
 
 The image below shows an airplane mesh with sampled point clouds using MongeNet (left) and Random Uniform Sampling (right). We can observe that random uniform sampling produces clustering of points (clamping) along the surface resulting in large undersampled areas and spurious artifacts for flat surfaces. In contrast, MongeNet sampled points are uniformly distributed which better approximate the underlying mesh surfaces without producing sampling artifacts.
 
-{% include figure image_path="/assets/images/avion_both.png" alt="Mesh sampling example" caption="Plane of the ShapeNet dataset sampled with 5k points. ***Left***: Point cloud produced by MongeNet. ***Right***: Point cloud produced by the random uniform sampler. Note the clamping pattern across the mesh produced by the random uniform sampling approach." %}
+<!-- {% include figure image_path="/assets/images/avion_both.png" alt="Mesh sampling example" caption="Plane of the ShapeNet dataset sampled with 5k points. ***Left***: Point cloud produced by MongeNet. ***Right***: Point cloud produced by the random uniform sampler. Note the clamping pattern across the mesh produced by the random uniform sampling approach." %} -->
+
+{% include gallery id="gallery_airplane" caption="Plane of the ShapeNet dataset sampled with 5k points. ***Left***: Point cloud produced by MongeNet. ***Right***: Point cloud produced by the random uniform sampler. Note the clamping pattern across the mesh produced by the random uniform sampling approach." %}
+
+{% include gallery id="gallery_voronoi" caption="Discretization of a mesh by a point cloud. ***Left:*** MongeNet discretisation. ***Right:*** Classical random uniform, with
+in red the resulting Voronoi Tessellation spawn on the triangles of the mesh." %}
+
+
+<!-- 
+![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/voronoi_monge.gif){: .align-left}
+
+![image-right]({{ site.url }}{{ site.baseurl }}/assets/images/voronoi_unif.gif){: .align-right} -->
+
+<!-- {% include figure image_path="/assets/images/voronoi_monge.gif" alt="" caption="" %} -->
+
+<!-- {% include figure image_path="/assets/images/voronoi_unif.gif" alt="" caption="" %} -->
 
 
 
@@ -46,7 +69,7 @@ The image below shows an airplane mesh with sampled point clouds using MongeNet 
 The videos below compare the mesh reconstructing results of the [Point2Mesh](https://ranahanocka.github.io/point2mesh/) model using MongeNet and Random Uniform Sampling for two very complex shapes. MongeNet produces better results mainly in the shape's fine details and areas of high curvature.
 
 {% include video id="RfmZBbSEiz4" provider="youtube" %}
-{% include video id="iDA9n5CFY4c" provider="youtube" %}
+{% include video id="6FGA5JJqM-A" provider="youtube" %}
 
 <br/><br/>
 
